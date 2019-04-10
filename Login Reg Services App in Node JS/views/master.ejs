@@ -1,0 +1,35 @@
+<p></p>
+<nav class="">
+<form action="/master" method="GET" class="form-inline">
+    <div class="form-group" >
+        <input type="text" name="search" placeholder="Search" class="form-control"> &nbsp
+         <input type="submit" class="btn btn-secondary" value="Search">
+    </div>
+</form>
+</nav>
+<br/>
+<h3><a class="btn btn-info" href="/dashboard"><i class="fa fa-home"></i> Dashboard</a> &nbsp Registered List</h3>
+<table class="table table" bgcolor="white">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Profession</th>
+            <th>Contact</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <% user.forEach(function(user) { %>
+        <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.profession %></td>
+            <td><%= user.phone %></td>
+            <td>
+                <a class="btn btn-success" href='/display/<%= user._id%>'><i class="fa fa-user"></i> Show</a></h3>
+            </td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
